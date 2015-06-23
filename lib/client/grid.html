@@ -1,0 +1,9 @@
+<template name="SocialMediaFeed">
+	<div class="container-social-media-feed" id="mosaic-container">
+		<ul class="mosaic-container">
+			{{#each socialMedia this}}
+				{{> SocialMediaTile}}
+			{{/each}}
+		</ul>
+	</div>
+</template>

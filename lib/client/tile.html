@@ -1,0 +1,32 @@
+<template name="SocialMediaTile">
+	<li class="social-media-tile {{data.type}} tile">
+		{{#if equal social_network "instagram"}}
+			<a href="{{data.link}}">
+				<figure>
+					<img class="social-media-image" src="{{data.images.low_resolution.url}}" alt="{{data.caption.text}}">
+					<figcaption class="tile">
+						<span class="tile-center">{{data.caption.text}}</span>
+	 				</figcaption>
+				</figure>
+			</a>
+		{{/if}}
+		{{#if equal social_network "facebook"}}
+			{{#if equal data.type "photo"}}
+				<a href="{{data.link}}">
+					<figure>
+						<img class="social-media-image" src="{{large_image}}" alt="{{data.caption.text}}">
+						<figcaption class="tile">
+							<span class="tile-center">{{data.message}}</span>
+		 				</figcaption>
+					</figure>
+				</a>
+			{{else}}
+				<a href="{{data.link}}">
+					<div class="facebook-text-post">
+						<h4>{{data.message}}</h4>
+					</div>
+				</a>
+			{{/if}}
+		{{/if}}
+	</li>
+</template>

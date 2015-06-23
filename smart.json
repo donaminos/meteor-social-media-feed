@@ -1,0 +1,10 @@
+{
+	"name": "Meteor - Social Media Feed",
+	"description": "Aggregated social media feed",
+	"homepage": "https://github.com/nagelflorian/meteor-social-media-feed",
+	"author": "Florian Nagel <hello@floriannagel.net>",
+	"version": "0.0.1",
+	"git": "https://github.com/nagelflorian/meteor-social-media-feed.git",
+	"packages": {
+	}
+}
