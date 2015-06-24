@@ -1,5 +1,7 @@
 # DO NOT INSTALL - WORK IN PROGRESS
 
+[![Build Status](https://travis-ci.org/nagelflorian/meteor-social-media-feed.svg)](https://travis-ci.org/nagelflorian/meteor-social-media-feed)
+
 # Meteor - Social Media Feed
 
 ![Social media feed running with Masonry](https://cloud.githubusercontent.com/assets/7649376/8296111/afbc67d0-194c-11e5-8685-5d4ea9e0ebf2.png)
