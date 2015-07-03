@@ -21,10 +21,10 @@ Package.onUse(function(api) {
 	api.addFiles('lib/client/style.css', 'client');
 
 	api.export('SocialMediaFeed', 'server');
+	api.export('FeedCollection');
 });
 
 Package.onTest(function(api) {
-	api.use('tinytest');
-	api.use('floriannagel:social-media-feed');
+	api.use(['floriannagel:social-media-feed', 'tinytest', 'http']);
 	api.addFiles('social-media-feed-tests.js');
 });
