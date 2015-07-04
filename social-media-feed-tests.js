@@ -35,61 +35,31 @@ if (Meteor.isServer) {
 		});
 	});
 
-	Tinytest.addAsync('Get Facebook Data', function (test, onComplete) {
+	Tinytest.addAsync('Get data from networks', function(test, onComplete) {
 		SocialMediaFeed.config({
-			facebookIds: ["7919071058"]
-		});
-
-		SocialMediaFeed.update();
-
-		Meteor.setTimeout(function() {
-			test.notEqual(FeedCollection.find({social_network: "facebook"}).count(), 0);
-
-			// reset config + collection
-			SocialMediaFeed.config({facebookIds: []});
-			SocialMediaFeed.reset();
-			test.equal(FeedCollection.find({social_network: "facebook"}).count(), 0);
-
-			onComplete();
-		}, 5000);
-	});
-
-	Tinytest.addAsync('Get Instagram Profile Data', function (test, onComplete) {
-		SocialMediaFeed.config({
-			instagramIds: ["25025320"]
-		});
-
-		SocialMediaFeed.update();
-
-		Meteor.setTimeout(function() {
-			test.notEqual(FeedCollection.find({social_network: "instagram"}).count(), 0);
-
-			// reset config + collection
-			SocialMediaFeed.config({instagramIds: []});
-			SocialMediaFeed.reset();
-			test.equal(FeedCollection.find({social_network: "instagram"}).count(), 0);
-
-			onComplete();
-		}, 5000);
-	});
-
-	Tinytest.addAsync('Get Instagram Hashtag Data', function (test, onComplete) {
-		SocialMediaFeed.config({
+			facebookIds: ["7919071058"],
+			instagramIds: ["25025320"],
 			instagramTags: ["tbt"]
 		});
 
 		SocialMediaFeed.update();
 
 		Meteor.setTimeout(function() {
-			test.notEqual(FeedCollection.find({social_network: "instagram"}).count(), 0);
+			test.notEqual(FeedCollection.find({social_network: "facebook"}).count(), 0);
+			test.notEqual(FeedCollection.find({social_network: "instagram", "content_type": "profile_data"}).count(), 0);
+			test.notEqual(FeedCollection.find({social_network: "instagram", "content_type": "tag_data"}).count(), 0);
 
 			// reset config + collection
-			SocialMediaFeed.config({instagramIds: []});
+			SocialMediaFeed.config({
+				facebookIds: [],
+				instagramIds: [],
+				instagramTags: []
+			});
 			SocialMediaFeed.reset();
-			test.equal(FeedCollection.find({social_network: "instagram"}).count(), 0);
+			test.equal(FeedCollection.find().count(), 0);
 
 			onComplete();
-		}, 5000);
+		}, 5000)
 	});
 
 	Tinytest.add('Hide Content From Stream', function (test) {
