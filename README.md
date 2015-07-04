@@ -80,7 +80,7 @@ To gather content from the connected networks call:
 SocialMediaFeed.update();
 ```
 
-To schedule automatic updates you can use something like `[percolate:synced-cron](https://github.com/percolatestudio/meteor-synced-cron)`.
+To schedule automatic updates you can use something like [percolate:synced-cron](https://github.com/percolatestudio/meteor-synced-cron).
 
 ### Reset
 
