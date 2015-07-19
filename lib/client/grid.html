@@ -1,9 +1,72 @@
 <template name="SocialMediaFeed">
 	<div class="container-social-media-feed" id="mosaic-container">
-		<ul class="mosaic-container">
-			{{#each socialMedia this}}
-				{{> SocialMediaTile}}
-			{{/each}}
-		</ul>
+		{{#if Template.subscriptionsReady}}
+
+			{{#masonryContainer columnWidth=320 transitionDuration="0.2s" id="MasonryContainer" }}
+				{{#each item}}
+					{{#masonryElement "MasonryContainer"}}
+						{{> SocialMediaTile}}
+					{{/masonryElement}}
+				{{/each}}
+			{{/masonryContainer}}
+
+		{{/if}}
 	</div>
+</template>
+
+
+<template name="SocialMediaTile">
+	<div class="tile {{social_network}} {{data.type}}" id="{{_id}}">
+		{{#if equal social_network "instagram"}}
+			{{> InstagramTile}}
+		{{/if}}
+		{{#if equal social_network "facebook"}}
+			{{> FacebookTile}}
+		{{/if}}
+		{{#if equal social_network "custom"}}
+			{{> CustomTile}}
+		{{/if}}
+	</div>
+</template>
+
+<template name="FacebookTile">
+	{{#if equal data.type "photo"}}
+		<a href="{{data.link}}">
+			<figure>
+				<img class="social-media-image" src="{{large_image}}" alt="{{data.caption.text}}">
+				<figcaption class="tile">
+					<span class="tile-center">{{data.message}}</span>
+				</figcaption>
+			</figure>
+		</a>
+	{{else}}
+		<a href="{{data.link}}">
+			<div class="facebook-text-post">
+				<div class="info"><span class="profile">{{data.from.name}}</span> / {{formatFbDate data.created_time}}</div>
+				<h4>{{ headLineText data.message "120"}}</h4>
+			</div>
+		</a>
+	{{/if}}
+</template>
+
+<template name="InstagramTile">
+	<a href="{{data.link}}">
+		<figure>
+			<img class="social-media-image" src="{{data.images.low_resolution.url}}" alt="{{data.caption.text}}">
+			<figcaption class="tile">
+				<span class="tile-center">{{data.caption.text}}</span>
+			</figcaption>
+		</figure>
+	</a>
+</template>
+
+<template name="CustomTile">
+	<a href="{{url}}">
+		<figure>
+			<img class="social-media-image" src="{{image_link}}" alt="{{title}}">
+			<figcaption class="tile">
+				<span class="tile-center">{{title}}</span>
+			</figcaption>
+		</figure>
+	</a>
 </template>

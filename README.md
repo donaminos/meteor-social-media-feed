@@ -5,7 +5,7 @@
 
 A social media feed for [Meteor](http://meteor.com). It aggregates content from all connected social media profiles and builds up a mosaic from the gathered content. This package doesn't come with a grid layout library like [Masonry](http://masonry.desandro.com) in order for you to decide on which one you'd like to use.
 
-**Please follow the API Terms of Use of each connected social network.**
+**Please follow the Terms of Use of each connected social network.**
 
 ## Installation
 
@@ -97,3 +97,11 @@ You can hide content from the stream by calling:
 ```js
 SocialMediaFeed.hideContent(network, contentId);
 ```
+
+## To-Do
+
+- add infinite scroll functionality and option to toggle it off
+
+## License
+
+SocialMediaFeed is available under the MIT license. See the LICENSE file for more information.
