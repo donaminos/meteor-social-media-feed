@@ -1,9 +1,8 @@
-[![Build Status](https://travis-ci.org/nagelflorian/meteor-social-media-feed.svg)](https://travis-ci.org/nagelflorian/meteor-social-media-feed)
 # Meteor - Social Media Feed
 
 ![Social media feed running with Masonry](https://cloud.githubusercontent.com/assets/7649376/8296111/afbc67d0-194c-11e5-8685-5d4ea9e0ebf2.png)
 
-A social media feed for [Meteor](http://meteor.com). It aggregates content from all connected social media profiles and builds up a mosaic from the gathered content. This package doesn't come with a grid layout library like [Masonry](http://masonry.desandro.com) in order for you to decide on which one you'd like to use.
+A social media feed for [Meteor](http://meteor.com). It aggregates content from all connected social media profiles and builds up a mosaic from the gathered content.
 
 **Please follow the Terms of Use of each connected social network.**
 
@@ -15,7 +14,7 @@ $ meteor add floriannagel:social-media-feed
 
 ## Getting Started
 
-Create a 'setting.json' file at the root of your application with your api-keys like so:
+Create a 'setting.json' file at the root of your application with your API-Keys like so:
 
 ```js
 {
@@ -95,12 +94,20 @@ SocialMediaFeed.reset();
 You can hide content from the stream by calling:
 
 ```js
-SocialMediaFeed.hideContent(network, contentId);
+SocialMediaFeed.hideContent(id);
 ```
+
+### Add your own content to the feed
+
+ Currently there are three content types you can add to the feed:
+
+ - Simple text post
+ - Simple image post
+ - Date/Event type post
 
 ## To-Do
 
-- add infinite scroll functionality and option to toggle it off
+See repository [issues](https://github.com/nagelflorian/meteor-social-media-feed/issues) for open tasks and further enhancements.
 
 ## License
 

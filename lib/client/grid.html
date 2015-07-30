@@ -23,8 +23,14 @@
 		{{#if equal social_network "facebook"}}
 			{{> FacebookTile}}
 		{{/if}}
-		{{#if equal social_network "custom"}}
-			{{> CustomTile}}
+		{{#if equal content_type "custom-text"}}
+			{{> CustomTextTile}}
+		{{/if}}
+		{{#if equal content_type "custom-image"}}
+			{{> CustomImageTile}}
+		{{/if}}
+		{{#if equal content_type "custom-date"}}
+			{{> CustomDateTile}}
 		{{/if}}
 	</div>
 </template>
@@ -68,5 +74,35 @@
 				<span class="tile-center">{{title}}</span>
 			</figcaption>
 		</figure>
+	</a>
+</template>
+
+<template name="CustomTextTile">
+	<a href="{{url}}">
+		<div class="facebook-text-post">
+			<div class="info"><span class="profile">{{social_network}}</span> / {{formatDate created_at}}</div>
+			<h4>{{ headLineText title "120"}}</h4>
+		</div>
+	</a>
+</template>
+
+<template name="CustomImageTile">
+	<a href="{{url}}">
+		<figure>
+			<img class="social-media-image" src="{{image_url}}" alt="{{image_alt}}">
+			<figcaption class="tile">
+				<span class="tile-center">{{title}}</span>
+			</figcaption>
+		</figure>
+	</a>
+</template>
+
+<template name="CustomDateTile">
+	<a href="{{url}}">
+		<div class="facebook-text-post">
+			<div class="info"><span class="profile">{{dateFormatWeekDay date}}</span> / {{social_network}}</div>
+			<h4>{{ dateFormatDayMonth date }}</h4>
+			<h5>{{ headLineText title "60"}}</h5>
+		</div>
 	</a>
 </template>
