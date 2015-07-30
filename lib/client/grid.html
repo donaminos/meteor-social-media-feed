@@ -52,7 +52,7 @@
 <template name="InstagramTile">
 	<a href="{{data.link}}">
 		<figure>
-			<img class="social-media-image" src="{{data.images.low_resolution.url}}" alt="{{data.caption.text}}">
+			<img class="social-media-image" src="{{data.images.low_resolution.url}}" srcset="{{data.images.low_resolution.url}} 1x, {{data.images.standard_resolution.url}} 2x" alt="{{data.caption.text}}">
 			<figcaption class="tile">
 				<span class="tile-center">{{data.caption.text}}</span>
 			</figcaption>
