@@ -12,12 +12,13 @@ Package.describe({
 
 Package.onUse(function(api) {
 	api.versionsFrom('1.1.0.2');
+	api.use('fourseven:scss');
 	api.use(['underscore', 'check', 'logging'], 'server');
 	api.use(['templating', 'jquery'], 'client');
 	api.use(['mongo', 'http', 'voodoohop:masonrify', 'momentjs:moment'], ['client', 'server']);
 	api.addFiles('lib/collection.js', ['client', 'server']);
 	api.addFiles(['lib/server/publications.js','lib/server/social-media-feed.js'], 'server');
-	api.addFiles(['lib/client/helpers.js', 'lib/client/grid.html', 'lib/client/grid.js', 'lib/client/style.css'], 'client');
+	api.addFiles(['lib/client/helpers.js', 'lib/client/grid.html', 'lib/client/grid.js', 'lib/client/style.sass'], 'client');
 
 	api.export('SocialMediaFeed', 'server');
 	api.export('FeedCollection');

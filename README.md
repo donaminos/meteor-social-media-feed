@@ -12,6 +12,10 @@ A social media feed for [Meteor](http://meteor.com). It aggregates content from 
 $ meteor add floriannagel:social-media-feed
 ```
 
+## Example
+
+You can find an example project [here](INSERT-LINK-HERE).
+
 ## Getting Started
 
 Create a 'setting.json' file at the root of your application with your API-Keys like so:
