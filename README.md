@@ -115,10 +115,6 @@ SocialMediaFeed.addImage(network, title, url, imageUrl, imageAlt);
 SocialMediaFeed.addDate(network, date, title, url);
 ```
 
-## To-Do
-
-See repository [issues](https://github.com/nagelflorian/meteor-social-media-feed/issues) for open tasks and further enhancements.
-
 ## License
 
 SocialMediaFeed is available under the MIT license. See the LICENSE file for more information.
