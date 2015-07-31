@@ -105,10 +105,6 @@ SocialMediaFeed.hideContent(id);
 
  Currently there are three content types you can add to the feed:
 
- - Simple text post
- - Simple image post
- - Date/Event type post
-
 ```js
 SocialMediaFeed.addText(network, title, url);
 SocialMediaFeed.addImage(network, title, url, imageUrl, imageAlt);
