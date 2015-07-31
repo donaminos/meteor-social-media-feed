@@ -109,6 +109,12 @@ SocialMediaFeed.hideContent(id);
  - Simple image post
  - Date/Event type post
 
+```js
+SocialMediaFeed.addText(network, title, url);
+SocialMediaFeed.addImage(network, title, url, imageUrl, imageAlt);
+SocialMediaFeed.addDate(network, date, title, url);
+```
+
 ## To-Do
 
 See repository [issues](https://github.com/nagelflorian/meteor-social-media-feed/issues) for open tasks and further enhancements.
